@@ -16,5 +16,11 @@ def encode(password):
 
     return encoded_num
 
-
-
+# James Chau
+def decode_rle(rle_data):
+    decode = []
+    for i in range(0, len(rle_data), 2):
+        value = rle_data[i]
+    for t in range(0, value):
+        decode.append(rle_data[i+1])
+    return decode
