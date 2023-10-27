@@ -24,3 +24,28 @@ def decode_rle(rle_data):
     for t in range(0, value):
         decode.append(rle_data[i+1])
     return decode
+
+
+user_input = input('''Menu
+-------------
+1. Encode
+2. Decode
+3. Quit
+
+Please enter an option: ''')
+
+
+while user_input != '3':
+    if user_input == '1':
+        num_to_encode = input('Please enter your password to encode: ')
+        print('Your password has been encoded and stored!')
+    elif user_input == '2':
+        print(f'The encoded password is {encode(num_to_encode)}, and the original password is {num_to_encode}.')
+
+    user_input = input('''\nMenu
+-------------
+1. Encode
+2. Decode
+3. Quit
+
+Please enter an option: ''')
