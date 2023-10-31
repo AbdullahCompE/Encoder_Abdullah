@@ -16,6 +16,7 @@ def encode(password):
 
     return num
 
+
 # James Chau
 def decode(num):
     for i in num:
@@ -30,3 +31,27 @@ def decode(num):
             else:
                 result += str(int(i) - 3)
         return result
+
+
+print("""Menu
+-------------
+1. Encode
+2. Decode
+3. Quit\n""")
+user_input = input("Please enter an option: ")
+
+while user_input != '3':
+
+    if user_input == '1':
+        num_to_encode = input("Please enter your password to encode: ")
+        print("Your password has been encoded and stored!\n")
+
+    elif user_input == '2':
+        print(f"The encoded password is {encode(num_to_encode)}, and the original password is {decode(encode(num_to_encode))}.\n")
+
+    print("""Menu
+-------------
+1. Encode
+2. Decode
+3. Quit\n""")
+    user_input = input("Please enter an option: ")
