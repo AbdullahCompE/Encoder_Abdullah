@@ -1,20 +1,19 @@
 #Abdullah Islam
 
 def encode(password):
-    num = ''
+    encoded_num = ''
     for i in range(8):
 
         if str(int(password[i])) == '7':
-            num += '0'
+            encoded_num += '0'
         elif str(int(password[i])) == '8':
-            num += '1'
+            encoded_num += '1'
         elif str(int(password[i])) == '9':
-
-            num += '2'
+            encoded_num += '2'
         else:
-            num += str(int(password[i]) + 3)
+            encoded_num += str(int(password[i]) + 3)
 
-    return num
+    return encoded_num
 
 
 # James Chau
@@ -33,25 +32,26 @@ def decode(num):
         return result
 
 
-print("""Menu
+user_input = input('''Menu
 -------------
 1. Encode
 2. Decode
-3. Quit\n""")
-user_input = input("Please enter an option: ")
+3. Quit
+
+Please enter an option: ''')
+
 
 while user_input != '3':
-
     if user_input == '1':
-        num_to_encode = input("Please enter your password to encode: ")
-        print("Your password has been encoded and stored!\n")
-
+        num_to_encode = input('Please enter your password to encode: ')
+        print('Your password has been encoded and stored!')
     elif user_input == '2':
-        print(f"The encoded password is {encode(num_to_encode)}, and the original password is {decode(encode(num_to_encode))}.\n")
+        print(f'The encoded password is {encode(num_to_encode)}, and the original password is {decode(encode(num_to_encode))}.')
 
-    print("""Menu
+    user_input = input('''\nMenu
 -------------
 1. Encode
 2. Decode
-3. Quit\n""")
-    user_input = input("Please enter an option: ")
+3. Quit
+
+Please enter an option: ''')
